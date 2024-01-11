@@ -1,9 +1,6 @@
-from django.db import models
+from django.urls import path
+from . import views
 
-class Message(models.Model):
-    id = models.AutoField(primary_key=True)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.content
+urlpatterns = [
+    path('/', views.home, name='home'),
+]
